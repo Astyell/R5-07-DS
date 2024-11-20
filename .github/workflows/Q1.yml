@@ -1,0 +1,18 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Q1
+
+# Controls when the workflow will run
+on: [push]
+permissions:
+  contents: write
+      - name: On fait un nouveau fichier
+        run: readme.md > Q1_archive_README.md
+      # push
+      - name: On essaie de commit et push le fichier
+        run: |
+          git config --global user.name astyell
+          git config --global user.email etoiledeplante@gmail.com
+          git add readme.md
+          git commit -m "test push de readme.md"
+          git push
