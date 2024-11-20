@@ -1,0 +1,31 @@
+# This is a basic workflow to help you get started with Actions
+name: Q3
+
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  ajout-readme:
+    name: Create A File
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Ajouter les informations
+        run: |
+          rm Q2_archive_README.md
+          echo "Nom : Lebaron" > Q3_archive_java.txt
+          echo "Prénom : Alizéa" >> Q3_archive_java.txt
+          cat Q3.md >> Q3_archive_java.txt
+
+      - name: Commit and push the new file
+        run: |
+          git config --global user.name "astyell"
+          git config --global user.email "etoiledeplante@gmail.com"
+          git add Q3_archive_java.txt
+          git commit -m "Ajout Q3_archive_java.txt"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git push
