@@ -16,10 +16,10 @@ jobs:
 
       - name: Ajouter les informations
         run: |
-          rm Q2_archive_README.md
+          rm Q3_archive_java.txt
           echo "Nom : Lebaron" > Q3_archive_java.txt
           echo "Prénom : Alizéa" >> Q3_archive_java.txt
-          cat Q3.md >> Q3_archive_java.txt
+          cat Q3.java >> Q3_archive_java.txt
 
       - name: Commit and push the new file
         run: |
