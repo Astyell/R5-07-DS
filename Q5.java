@@ -25,7 +25,7 @@ public class Q5 {
         {
             for (int j = i; j < nombre; j++)
             {
-                chaine +="*";
+                chaine +="*"; 
             }
             chaine += "\n";
         }
