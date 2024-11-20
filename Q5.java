@@ -23,7 +23,7 @@ public class Q5 {
       
         for (int i = 0; i < nombre; i++)
         {
-            for (int j = 0; j < i; j++)
+            for (int j = i; j < nombre; j++)
             {
                 chaine +="*";
             }
