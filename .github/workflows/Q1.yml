@@ -1,9 +1,8 @@
 # This is a basic workflow to help you get started with Actions
-
 name: Q1
 
-# Controls when the workflow will run
 on: [push]
+
 permissions:
   contents: write
 
@@ -12,14 +11,17 @@ jobs:
     name: Create A File
     runs-on: ubuntu-latest
     steps:
-      - name: On fait un nouveau fichier
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Copier README.md dans Q1_archive_README.md
         run: cp README.md Q1_archive_README.md
-    
-      - name: On essaie de commit et push le fichier
+
+      - name: Commit and push the new file
         run: |
-          git config --global user.name astyell
-          git config --global user.email etoiledeplante@gmail.com
+          git config --global user.name "astyell"
+          git config --global user.email "etoiledeplante@gmail.com"
           git add Q1_archive_README.md
-          git commit -m "test push de readme.md"
+          git commit -m "Ajout Q1_archive_README.md"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push
