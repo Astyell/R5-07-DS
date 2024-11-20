@@ -2,24 +2,23 @@
 
 name: Q1
 
-# Controls when the workflow will run
-on: [push]
-permissions:
-  contents: write
-  
-jobs:
-  ajout-readme:
-    runs-on: ubuntu-latest
+on:
+  push:
+    branches:
+      - main
 
+jobs:
+  createFile:
+    name: Create A File
+    runs-on: ubuntu-latest
     steps:
-      - name: On fait un nouveau fichier
-        run: cp ../../README.md ../../Q1_archive_README.md
-    
-      - name: On essaie de commit et push le fichier
-        run: |
-          git config --global user.name astyell
-          git config --global user.email etoiledeplante@gmail.com
-          git add readme.md
-          git commit -m "test push de readme.md"
-          git push
+      - uses: actions/checkout@v2
+      - uses: 1arp/create-a-file-action@0.4.5
+        with:
+          path: './'
+          isAbsolutePath: false
+          file: 'Q1_archive_README.md'
+          content: |
+            Hello
+            World
 
