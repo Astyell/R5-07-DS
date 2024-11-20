@@ -8,12 +8,12 @@ permissions:
   contents: write
   
 jobs:
-  print-username:
+  ajout-readme:
     runs-on: ubuntu-latest
 
     steps:
       - name: On fait un nouveau fichier
-        run: readme.md > Q1_archive_README.md
+        run: cp readme.md Q1_archive_README.md
     
       - name: On essaie de commit et push le fichier
         run: |
