@@ -16,7 +16,6 @@ jobs:
 
       - name: Ajouter les informations
         run: |
-          rm Q3_archive_java.txt
           echo "Nom : Lebaron" > Q3_archive_java.txt
           echo "Prénom : Alizéa" >> Q3_archive_java.txt
           cat Q3.java >> Q3_archive_java.txt
