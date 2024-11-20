@@ -16,10 +16,11 @@ jobs:
 
       - name: Ajouter les informations
         run: |
-          echo "Nom : Lebaron\" > Q2_archive_README.md
-          echo "Prénom : Alizéa\" >> Q2_archive_README.md
-          echo "Date et heure : $(date '+%Y-%m-%d %H:%M')\" >> Q2_archive_README.md
-          echo "Contenu de README.md :\" >> Q2_archive_README.md
+          rm Q2_archive_README.md
+          echo "Nom : Lebaron" > Q2_archive_README.md
+          echo "Prénom : Alizéa" >> Q2_archive_README.md
+          echo "Date et heure : $(date '+%Y-%m-%d %H:%M')" >> Q2_archive_README.md
+          echo "Contenu de README.md :" >> Q2_archive_README.md
           cat README.md >> Q2_archive_README.md
 
       - name: Commit and push the new file
